@@ -21,7 +21,7 @@ beam.on('remote-address', function ({ host, port }) {
 
 beam.on('connected', function () {
   console.error('[hyperbeam] Success! Encrypted tunnel established to remote peer')
-  record = spawn('sox', ['-q', '--buffer', '512', '-d', '-r', '44100', '-c', '1', '-e', 'signed-integer', '-b', '16', '-t', 'wav', '-'], {
+  record = spawn('sox', ['-q', '--buffer', '512', '-d', '-r', '44100', '-c', '1', '-e', 'signed-integer', '-b', '16', '-t', 'ogg', '-'], {
     stdio: ['inherit', 'pipe', 'inherit' ]
   })
   play = spawn('play', ['-q', '--buffer', '512', '-'], {
